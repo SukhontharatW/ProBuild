@@ -1,0 +1,30 @@
+@use "../global/" as *;
+
+.container__hero {
+  // border: 1px solid yellow;
+  // margin-bottom: 3.2rem;
+  padding: 12.45rem 0rem 18.4rem 0rem;
+  padding: 12.45rem 0rem 21.6rem 0rem;
+
+  // =================================
+  display: grid;
+  grid-template-columns: 45fr 55fr;
+  @media screen and (max-width: $screen-tablet-y) {
+    grid-template-columns: 60fr 40fr;
+  }
+
+  // height: 100vh;
+}
+.hero__text {
+  padding-top: 12rem;
+
+  & .paragraph__inter--normal {
+    padding: 2.8rem 0rem 4.5rem 0;
+    color: $color-grey;
+  }
+}
+.hero__btn {
+  display: flex;
+  justify-content: start;
+  gap: 1.6rem;
+}

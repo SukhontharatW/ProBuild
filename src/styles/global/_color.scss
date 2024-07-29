@@ -1,0 +1,25 @@
+// COLOR VARIABLES
+$color-white: #fff;
+$color-black: #2b2b2b;
+$color-grey: #636363;
+
+$color-orange: #ffb717;
+
+.bg__black {
+  background-color: $color-black;
+}
+.bg__white {
+  background-color: $color-white;
+}
+.text__black {
+  color: $color-black;
+}
+.text__white {
+  color: $color-white;
+}
+.text__grey {
+  color: $color-grey;
+}
+.text__orange {
+  color: $color-orange;
+}

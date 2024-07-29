@@ -1,0 +1,68 @@
+@use "../global/" as *;
+.bg__yellow-white {
+  background-color: $color-orange;
+  background: linear-gradient(90deg, $color-orange 37%, #fff 0%);
+  @media screen and (max-width: $screen-mobile-x) {
+    background: rgba(#fff, 0.6);
+  }
+}
+.container__about {
+  // border: 1px solid green;
+  // margin-bottom: 16rem;
+  // =================================
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: max-content;
+  align-items: center;
+  @media screen and (max-width: $screen-mobile-x) {
+    grid-template-columns: 1fr;
+    // background-color: rgba(#fff, 0.6);
+    // backdrop-filter: blur(1.5rem);
+  }
+}
+.about {
+  & .btn {
+    @media screen and (max-width: $screen-mobile-x) {
+    }
+  }
+  &__image {
+    // display: flex;
+    // justify-content: center;
+    // align-items: center;
+    // padding-right: 12.5rem;
+    // border: 1px solid green;
+
+    padding-right: 4rem;
+    @media screen and (max-width: $screen-l) {
+      padding: 0rem;
+    }
+
+    & img {
+      width: 100%;
+      height: auto;
+      overflow: hidden;
+      // border: 1px solid green;
+    }
+  }
+  &__text {
+    padding-top: 1.8rem;
+    padding-bottom: 1.8rem;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: space-between;
+
+    & .paragraph__inter--normal {
+      margin-top: 3.2rem;
+      margin-bottom: 4.6rem;
+      padding-right: 2.8rem;
+      @media screen and (max-width: $screen-tablet-y) {
+        padding-right: 0rem;
+      }
+    }
+
+    @media screen and (max-width: $screen-l) {
+      padding: 2rem;
+    }
+  }
+}

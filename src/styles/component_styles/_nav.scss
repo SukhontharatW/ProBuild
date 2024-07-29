@@ -1,0 +1,241 @@
+@use "../global/" as *;
+.container__banner {
+  // border: 1px solid yellow;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  transition: all 0.3s;
+  color: white;
+  background-color: $color-black;
+  z-index: 888;
+
+  & .banner {
+    max-width: 144rem;
+    margin: 0 auto;
+    //=========================
+    padding: 1rem 10rem 1rem 10rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+}
+.banner {
+  &__contact {
+    display: flex;
+    align-items: center;
+
+    &--phone,
+    &--address {
+      display: flex;
+      align-items: center;
+      column-gap: 0.8rem;
+      &:not(&:last-child) {
+        padding-right: 2rem;
+        border-right: 1px solid $color-white;
+      }
+      &:last-child {
+        padding-left: 2rem;
+      }
+      & img {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 1.1rem;
+        height: 1.1rem;
+      }
+    }
+  }
+  &__social {
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+    &--item {
+      color: $color-black;
+      background-color: $color-white;
+      border-radius: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 2rem;
+      height: 2rem;
+    }
+  }
+}
+
+// ===========================
+// Navbar
+// ===========================
+.container__nav {
+  // border: 2px solid green;
+  position: fixed;
+  top: 4rem;
+  z-index: 888;
+  width: 100%;
+  transition: all 0.3s;
+
+  background-color: transparent;
+
+  & .navbar {
+    max-width: 144rem;
+    margin: 0 auto;
+    //=========================
+    padding: 3rem 10rem 1rem 10rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+}
+.container__bg {
+  background-color: rgba(256, 256, 256, 0.98);
+  // background-color: rgba($color-white, 0.8);
+  backdrop-filter: blur(1.5rem);
+
+  border: 1px solid rgba(43, 43, 43, 0.03);
+}
+
+.navbar {
+  &__right {
+    display: flex;
+    align-items: center;
+    transition: all 0.3s;
+  }
+  &__logo {
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    & img {
+      width: 15.2rem;
+      height: auto;
+    }
+  }
+  &__nav {
+    display: flex;
+    margin-right: 6rem;
+    gap: 3.6rem;
+
+    &--item {
+      list-style: none;
+    }
+    &--link {
+      text-decoration: none;
+      color: inherit;
+      transition: all 0.3s;
+      &:hover {
+        color: $color-orange;
+      }
+    }
+  }
+}
+// ===========================
+// Responsive
+// ===========================
+.hamburger {
+  display: none;
+  position: absolute;
+  top: 3.6rem;
+  right: 10rem;
+  background-color: $color-orange;
+  padding: 0.3rem;
+  color: $color-black;
+}
+.dropdown__menu {
+  position: absolute;
+  top: 9rem;
+  right: 10rem;
+  width: 40rem;
+  background-color: rgba($color-white, 0.96);
+  backdrop-filter: blur(1.5rem);
+  overflow: hidden;
+
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  padding: 8rem 8rem 8rem 8rem;
+  border-radius: 0.6rem;
+  box-shadow: 0rem 1rem 1rem 1rem rgba(0, 0, 0, 0.2);
+  justify-content: space-between;
+
+  display: none;
+  transition: all 0.9rem;
+  & .navbar__nav {
+    width: 100%;
+
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+  }
+  & .btn {
+    width: 100%;
+    text-align: center;
+  }
+}
+
+@media screen and (max-width: 1120px) {
+  .hamburger {
+    display: block;
+    cursor: pointer;
+    transition: all 0.3s;
+    transform: translate3d(0, 0, 0);
+    &:hover {
+      transform: translateY(0);
+      transition-duration: 0.35s;
+    }
+    &:active {
+      transform: translateY(0.2rem);
+      transition-duration: 0.35s;
+    }
+  }
+  .navbar__right {
+    display: none;
+  }
+  .dropdown__menu.active {
+    display: flex;
+  }
+}
+
+@media screen and (max-width: 680px) {
+  .dropdown__menu {
+    width: 30rem;
+    padding: 4rem 4rem 4rem 4rem;
+  }
+  .container__nav {
+    transition: all 0.3s;
+  }
+  .banner {
+    &__contact {
+      display: flex;
+      flex-direction: column;
+      gap: 0.2rem;
+
+      &--phone,
+      &--address {
+        // border: 1px solid green;
+        width: 100%;
+        text-align: start;
+        display: block;
+        text-align: start;
+        display: flex;
+        column-gap: 0.8rem;
+        &:not(&:last-child) {
+          padding-right: 0rem;
+          border-right: none;
+        }
+        &:last-child {
+          padding-left: 0rem;
+        }
+      }
+    }
+    &__social {
+      &--item {
+        width: 1.8rem;
+        height: 1.8rem;
+      }
+    }
+  }
+  .paragraph__poppins--12 {
+    font-size: 1rem;
+  }
+}
+// @media screen and (max-width: $screen-tablet-x) {
+//   // $screen-tablet-x: 1024;
+// }
